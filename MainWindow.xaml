@@ -1,0 +1,47 @@
+﻿<Window x:Class="XamlApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XamlApp"
+        mc:Ignorable="d"
+        Title="DepartmentIT" Height="768" Width="1024">
+    <!--Задать стили для кнопок через Windows.Resources -->
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="Default">
+            <Setter Property="Background" Value="Aquamarine" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style TargetType="Button" x:Key="Exit">
+            <Setter Property="Background" Value="RosyBrown" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="layoutGrid">
+        <!--<TextBox x:Name="MyTextbox" Width="150" Height="60" VerticalAlignment="Top" Margin="30" />-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "50"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Button Content="Просто текст для того что нужно было что то вставить" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Button Content="Справочники" Style="{StaticResource Default}" />
+                <Button Content="Учёт картриджей" Style="{StaticResource Default}"/>
+                <Button Content="Проводимые работы" Style="{StaticResource Default}"/>
+                <Button Content="Отчёты" Style="{StaticResource Default}"/>
+                <Button Content="Выход" Style="{StaticResource Exit}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button Content="Простой текст для того чтобы хоть что-то написать" />
+        </Grid>
+    </Grid>
+</Window>
